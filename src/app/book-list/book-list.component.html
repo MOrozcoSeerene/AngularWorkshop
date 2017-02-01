@@ -1,0 +1,8 @@
+<div *ngIf="books">
+  <h1>Book list:</h1>
+</div>
+
+<div *ngFor="let book of books; let i = index;">
+  <h2>{{ book.title }}</h2>
+  <p>ISBN: index: {{i}} {{ book.isbn }}</p>
+</div>
