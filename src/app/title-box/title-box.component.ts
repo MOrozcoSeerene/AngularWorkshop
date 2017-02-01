@@ -8,13 +8,13 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 export class TitleBoxComponent implements OnInit {
   @Input() title: string;
   @Output() ping: EventEmitter<string>;
-  @Output() titleClicked = new EventEmitter<string>();
+  @Output() titleClicked = new EventEmitter<MouseEvent>();
 
   constructor() {
   }
 
-  public handleTitleClicked() {
-    this.titleClicked.emit('EventData')
+  public handleTitleClicked($event) {
+    this.titleClicked.emit($event);
   }
 
   public emitPing = function() {
