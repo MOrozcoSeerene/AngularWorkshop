@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Info box component';
+
+  public receiveEvent = function($event) {
+    console.debug('I Have received an event: ' + $event);
+  }
 }
