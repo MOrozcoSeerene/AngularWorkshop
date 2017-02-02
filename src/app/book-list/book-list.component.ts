@@ -1,27 +1,31 @@
 ///<reference path="../shared/book-data.service.ts"/>
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Book} from "../shared/book";
 import {BookDataService} from "../shared/book-data.service";
-import {Observable} from "rxjs";
-import {Response} from "@angular/http";
+import {Observable, Subscription} from "rxjs";
+import 'rxjs/Rx';
 
 @Component({
   selector: 'book-list',
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css']
 })
-export class BookListComponent implements OnInit {
+export class BookListComponent implements OnInit, OnDestroy {
 
   public books: Book[] = [];
+  private subscription: Subscription;
 
   constructor(private bookData: BookDataService) {
-    let observable: Observable<Book[]> = bookData.getBooks();
-    observable.subscribe(result => {
-        this.books = result;
-    });
   }
 
   ngOnInit() {
+    let observable: Observable<Book[]> = this.bookData.getBooks();
+    this.subscription = observable.subscribe(result => {
+      this.books = result;
+    });
+  }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
