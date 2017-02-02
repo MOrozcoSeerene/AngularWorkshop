@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot} from "@angular/router";
-import {Observable} from "rxjs";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'book',
+  selector: 'book-component',
   templateUrl: './book.component.html',
   styleUrls: ['./book.component.css']
 })

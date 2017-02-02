@@ -19,7 +19,7 @@ export class TitleBoxComponent implements OnInit {
 
   public emitPing = function() {
     this.ping.emit('Hello!');
-  }
+  };
 
   ngOnInit() {
     this.title += 'added to title';

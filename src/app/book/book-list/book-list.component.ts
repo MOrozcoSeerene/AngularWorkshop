@@ -1,8 +1,8 @@
-///<reference path="../shared/book-data.service.ts"/>
+///<reference path='../shared/book-data.service.ts'/>
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {Book} from "../shared/book";
-import {BookDataService} from "../shared/book-data.service";
-import {Observable, Subscription} from "rxjs";
+import {Book} from '../shared/book';
+import {BookDataService} from '../shared/book-data.service';
+import {Observable, Subscription} from 'rxjs';
 import 'rxjs/Rx';
 
 @Component({
@@ -19,7 +19,7 @@ export class BookListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    let observable: Observable<Book[]> = this.bookData.getBooks();
+    const observable: Observable<Book[]> = this.bookData.getBooks();
     this.subscription = observable.subscribe(result => {
       this.books = result;
     });

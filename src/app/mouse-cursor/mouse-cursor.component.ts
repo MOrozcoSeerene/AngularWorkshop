@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 
 @Component({
   selector: 'mouse-cursor',
@@ -11,15 +11,14 @@ export class MouseCursorComponent implements OnInit {
   public yPosition: number = -1;
 
   public updateMousePosition = function(event) {
-    debugger;
     this.xPosition = event.clientX - event.target.offsetLeft;
     this.yPosition = event.clientY - event.target.offsetTop;
-  }
+  };
 
   public onMouseOut = function() {
     this.xPosition = -1;
     this.yPosition = -1;
-  }
+  };
 
   constructor() {
   }

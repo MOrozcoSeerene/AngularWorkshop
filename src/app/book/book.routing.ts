@@ -1,8 +1,8 @@
-import {Routes, RouterModule} from "@angular/router";
-import {BookComponent} from "./book.component";
-import {BookListComponent} from "./book-list/book-list.component";
-import {BookDetailsComponent} from "./book-details/book-details.component";
-import {ConfirmCandeactivateGuardService} from "./shared/confirm-candeactivate-guard.service";
+import {Routes, RouterModule} from '@angular/router';
+import {BookComponent} from './book.component';
+import {BookListComponent} from './book-list/book-list.component';
+import {BookDetailsComponent} from './book-details/book-details.component';
+import {ConfirmCandeactivateGuardService} from './shared/confirm-candeactivate-guard.service';
 
 // Define routes
 export const routes: Routes = [

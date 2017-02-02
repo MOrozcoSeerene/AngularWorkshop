@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot} from "@angular/router";
-import {Book} from "./book";
-import {Observable} from "rxjs";
+import {CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
+import {Book} from './book';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class ConfirmCandeactivateGuardService implements CanDeactivate<Book> {

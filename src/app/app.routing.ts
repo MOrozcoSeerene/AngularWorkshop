@@ -1,6 +1,6 @@
-import {ModuleWithProviders} from "@angular/core";
-import {Routes, RouterModule} from "@angular/router";
-import {ConfirmCandeactivateGuardService} from "./book/shared/confirm-candeactivate-guard.service";
+import {ModuleWithProviders} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {ConfirmCandeactivateGuardService} from './book/shared/confirm-candeactivate-guard.service';
 
 // Define routes
 export const appRoutes: Routes = [
