@@ -51,4 +51,14 @@ export class BookDataService {
     return Observable.of(this.books);
   }
 
+  public getBooksSequenatially = function() {
+    let observable = new Observable(observer => {
+
+      for (let book of this.books) {
+          observer.next(book);
+      }
+      observer.complete();
+    });
+    return observable;
+  }
 }

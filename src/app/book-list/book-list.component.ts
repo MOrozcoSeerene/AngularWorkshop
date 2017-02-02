@@ -11,12 +11,12 @@ import {Observable} from "rxjs";
 })
 export class BookListComponent implements OnInit {
 
-  public books: Book[];
+  public books: Book[] = [];
 
   constructor(private bookData: BookDataService) {
-    let observable: Observable<Book[]> = bookData.getBooks();
-    observable.subscribe(data => {
-        this.books = data;
+    let observable: any = bookData.getBooksSequenatially();
+    observable.subscribe(value => {
+        this.books.push(value);
     });
   }
 
