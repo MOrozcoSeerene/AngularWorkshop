@@ -3,6 +3,6 @@
 </div>
 
 <div *ngFor="let book of books; let i = index;">
-  <h2>{{ book.title }}</h2>
-  <p>ISBN: index: {{i}} {{ book.isbn }}</p>
+  <h2><a [routerLink] ="['/books', book.isbn]"> {{ book.title }}</a> </h2>
+  <p>Subtitle: {{ book.subtitle }}</p>
 </div>

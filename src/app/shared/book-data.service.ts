@@ -7,12 +7,17 @@ import 'rxjs/Rx';
 @Injectable()
 export class BookDataService {
   private books: Book[];
-  private URL_ENDPOINT: string = "http://localhost:4730/books";
+  private BOOKS_URL_ENDPOINT: string = "http://localhost:4730/books";
+  private BOOKS_ISBN_URL_ENDPOINT: string = "http://localhost:4730/books/";
 
   constructor(private http: Http) {
   }
 
   getBooks(): Observable<Book[]> {
-    return this.http.get(this.URL_ENDPOINT).map((response : Response) => response.json());
+    return this.http.get(this.BOOKS_URL_ENDPOINT).map((response : Response) => response.json());
+  }
+
+  getBookByIsbn(isbn: string) : Observable<Book> {
+    return this.http.get(this.BOOKS_ISBN_URL_ENDPOINT + isbn).map((response: Response) => response.json());
   }
 }
