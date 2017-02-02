@@ -7,7 +7,6 @@ import {InfoBoxComponent} from "./info-box/info-box.component";
 import {MouseCursorComponent} from "./mouse-cursor/mouse-cursor.component";
 import {TitleBoxComponent} from "./title-box/title-box.component";
 import {routing} from "./app.routing";
-import {BookComponent} from "./book/book.component";
 import {BookModule} from "./book/book.module";
 
 @NgModule({
@@ -21,7 +20,6 @@ import {BookModule} from "./book/book.module";
     BrowserModule,
     FormsModule,
     HttpModule,
-    BookModule,
     routing
   ],
   providers: [],

@@ -4,6 +4,7 @@ import {Routes, RouterModule} from "@angular/router";
 // Define routes
 export const appRoutes: Routes = [
   { path: '', redirectTo: '/books', pathMatch: 'full'},
+  { path: 'books', loadChildren: './book/book.module#BookModule'}
 ];
 
 // Create a new module with configured router

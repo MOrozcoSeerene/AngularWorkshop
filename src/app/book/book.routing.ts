@@ -5,7 +5,7 @@ import {BookDetailsComponent} from "./book-details/book-details.component";
 
 // Define routes
 export const routes: Routes = [
-  { path: 'books', component: BookComponent, children: [
+  { path: '', component: BookComponent, children: [
     {
       component: BookListComponent,
       path: '',
