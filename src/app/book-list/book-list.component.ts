@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {Book} from "../shared/book";
 import {BookDataService} from "../shared/book-data.service";
 import {Observable} from "rxjs";
+import {Response} from "@angular/http";
 
 @Component({
   selector: 'book-list',
@@ -14,9 +15,9 @@ export class BookListComponent implements OnInit {
   public books: Book[] = [];
 
   constructor(private bookData: BookDataService) {
-    let observable: any = bookData.getBooksSequenatially();
-    observable.subscribe(value => {
-        this.books.push(value);
+    let observable: Observable<Book[]> = bookData.getBooks();
+    observable.subscribe(result => {
+        this.books = result;
     });
   }
 
