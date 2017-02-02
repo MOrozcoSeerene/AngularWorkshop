@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CanDeactivate, ActivatedRouteSnapshot, RouterStateSnapshot} from "@angular/router";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'book',
@@ -11,5 +13,4 @@ export class BookComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

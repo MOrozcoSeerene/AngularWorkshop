@@ -5,6 +5,7 @@ import {BookListComponent} from "./book-list/book-list.component";
 import {BookDetailsComponent} from "./book-details/book-details.component";
 import {routing} from "./book.routing";
 import {BookComponent} from "./book.component";
+import {ConfirmCandeactivateGuardService} from "./shared/confirm-candeactivate-guard.service";
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import {BookComponent} from "./book.component";
     BookComponent,
     BookListComponent,
     BookDetailsComponent],
-  providers: [BookDataService]
+  providers: [BookDataService, ConfirmCandeactivateGuardService]
 })
 
 export class BookModule { }
