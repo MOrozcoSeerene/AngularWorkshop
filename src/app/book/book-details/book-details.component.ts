@@ -6,8 +6,8 @@ import {Book} from "../shared/book";
 
 @Component({
   selector: 'book-details',
-  templateUrl: './book-details.component.html',
-  styleUrls: ['./book-details.component.css']
+  templateUrl: 'book-details.component.html',
+  styleUrls: ['book-details.component.css']
 })
 export class BookDetailsComponent implements OnInit {
 

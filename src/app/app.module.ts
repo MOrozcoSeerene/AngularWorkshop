@@ -1,16 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
-import { AppComponent } from './app.component';
-import { InfoBoxComponent } from './info-box/info-box.component';
-import { MouseCursorComponent } from './mouse-cursor/mouse-cursor.component';
-import { TitleBoxComponent } from './title-box/title-box.component';
-import { BookListComponent } from './book-list/book-list.component';
-import {BookDataService} from "./shared/book-data.service";
+import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from "@angular/core";
+import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
+import {AppComponent} from "./app.component";
+import {InfoBoxComponent} from "./info-box/info-box.component";
+import {MouseCursorComponent} from "./mouse-cursor/mouse-cursor.component";
+import {TitleBoxComponent} from "./title-box/title-box.component";
 import {routing} from "./app.routing";
-import { BookDetailsComponent } from './book-details/book-details.component';
+import {BookComponent} from "./book/book.component";
+import {BookModule} from "./book/book.module";
 
 @NgModule({
   declarations: [
@@ -18,16 +16,15 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     InfoBoxComponent,
     MouseCursorComponent,
     TitleBoxComponent,
-    BookListComponent,
-    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    BookModule,
     routing
   ],
-  providers: [BookDataService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
