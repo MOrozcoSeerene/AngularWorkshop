@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <h2 class="page-header" *ngIf="books">Books </h2>
 
-  <div *ngFor="let book of books; let i = index;">
+  <div *ngFor="let book of books; let i = index;" >
     <h2><a [routerLink] ="['/books', book.isbn]"> {{ book.title }}</a> </h2>
     <p>Subtitle: {{ book.subtitle }}</p>
   </div>
 
-  <button [routerLink] = "['new']">Add new Book</button>
+  <button [tooltip]="'Hey!'" [routerLink]="['new']">Add new Book</button>
 </div>
