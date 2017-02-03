@@ -20,4 +20,9 @@ export class BookDataService {
   getBookByIsbn(isbn: string): Observable<Book> {
     return this.http.get(this.BOOKS_ISBN_URL_ENDPOINT + isbn).map((response: Response) => response.json());
   }
+
+  createBook(book: Book): Observable<Book> {
+    return this.http.post(this.BOOKS_ISBN_URL_ENDPOINT, book)
+      .map(response => response.json());
+  }
 }

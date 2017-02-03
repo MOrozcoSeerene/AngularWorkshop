@@ -1,25 +1,28 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {BookDataService} from './shared/book-data.service';
-import {BookListComponent} from './book-list/book-list.component';
-import {BookDetailsComponent} from './book-details/book-details.component';
-import {routing} from './book.routing';
-import {BookComponent} from './book.component';
-import {ConfirmCandeactivateGuardService} from './shared/confirm-candeactivate-guard.service';
-import { BookEditComponent } from './book-edit/book-edit.component';
-import { FormsModule } from '@angular/forms';
+import {NgModule} from "@angular/core";
+import {CommonModule} from "@angular/common";
+import {BookDataService} from "./shared/book-data.service";
+import {BookListComponent} from "./book-list/book-list.component";
+import {BookDetailsComponent} from "./book-details/book-details.component";
+import {routing} from "./book.routing";
+import {BookComponent} from "./book.component";
+import {ConfirmCandeactivateGuardService} from "./shared/confirm-candeactivate-guard.service";
+import {BookEditComponent} from "./book-edit/book-edit.component";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BookEditReactiveComponent} from "./book-edit-reactive/book-edit-reactive.component";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     routing
   ],
   declarations: [
     BookComponent,
     BookListComponent,
     BookDetailsComponent,
-    BookEditComponent],
+    BookEditComponent,
+    BookEditReactiveComponent],
   providers: [BookDataService, ConfirmCandeactivateGuardService]
 })
 

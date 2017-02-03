@@ -1,0 +1,67 @@
+<h1>New book:</h1>
+
+<form [formGroup]="form" (ngSubmit) = "onSubmit()">
+  <table>
+    <tr>
+      <td class="form-label">Title:</td>
+      <td>
+        <input
+          class="input-field"
+          type="text" required
+          formControlName="title">
+      </td>
+      <td>
+        <div class="error-label" [hidden]="!form.get('title').hasError('required')">
+          Title is required!
+        </div>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td class="form-label">Author:</td>
+      <td>
+        <input
+          class="input-field"
+          type="text" required
+          formControlName="author">
+      </td>
+      <td>
+        <div class="error-label" [hidden]="!form.get('author').hasError('required')">
+          Author is required!
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="form-label">Isbn:</td>
+      <td>
+        <input
+          class="input-field"
+          type="text" required
+          formControlName="isbn">
+      </td>
+      <td>
+        <div class="error-label" [hidden]="!form.get('isbn').hasError('required')">
+          Isbn is required!
+        </div>
+      </td>
+    </tr>
+
+    <fieldset formGroupName="publisher">
+      <label>Name:</label>
+      <input type="text" formControlName="name">
+
+      <label>Url:</label>
+      <input type="text" formControlName="url">
+
+    </fieldset>
+
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit" [disabled]="form.invalid">Save!</button>
+      </td>
+    </tr>
+  </table>
+</form>

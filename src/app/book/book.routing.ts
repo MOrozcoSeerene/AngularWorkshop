@@ -5,6 +5,7 @@ import {BookListComponent} from './book-list/book-list.component';
 import {BookDetailsComponent} from './book-details/book-details.component';
 import {ConfirmCandeactivateGuardService} from './shared/confirm-candeactivate-guard.service';
 import {BookEditComponent} from "./book-edit/book-edit.component";
+import {BookEditReactiveComponent} from "./book-edit-reactive/book-edit-reactive.component";
 
 // Define routes
 export const routes: Routes = [
@@ -12,6 +13,10 @@ export const routes: Routes = [
     {
       component: BookListComponent,
       path: '',
+    },
+    {
+      component: BookEditReactiveComponent,
+      path: 'new',
     },
     {
       component: BookDetailsComponent,
