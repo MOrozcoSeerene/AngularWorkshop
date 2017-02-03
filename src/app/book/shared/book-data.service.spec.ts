@@ -1,12 +1,16 @@
-/* tslint:disable:no-unused-variable */
-
-import { TestBed, async, inject } from '@angular/core/testing';
-import { BookDataService } from './book-data.service';
+import {TestBed, inject} from "@angular/core/testing";
+import {BookDataService} from "./book-data.service";
+import {HttpModule, XHRBackend} from "@angular/http";
+import {MockBackend} from "@angular/http/testing";
 
 describe('BookDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [BookDataService]
+      imports: [HttpModule],
+      providers: [BookDataService, {
+        provide: XHRBackend,
+        useClass: MockBackend
+      }]
     });
   });
 
