@@ -1,0 +1,3 @@
+ng serve
+ng serve --prod 
+ng server --prod --aot
