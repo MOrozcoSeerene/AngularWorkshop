@@ -1,7 +1,72 @@
-<form>
-  <span>Title:</span>
-  <input
-    type="text" required
-    [(ngModel)]="book.title"
-    name="title">
-</form>
+<div *ngIf="!book">
+  Loading...
+</div>
+
+<div *ngIf="book">
+  <h1>Book details:</h1>
+
+  <form #form="ngForm" (ngSubmit) = "saveBook(form.value)">
+    <table>
+      <tr>
+        <td class="form-label">Title:</td>
+        <td>
+          <input
+            class="input-field"
+            type="text" required
+            [(ngModel)]="book.title"
+            name="title"
+            #title="ngModel">
+        </td>
+        <td>
+          <div class="error-label" [hidden]="!title.errors?.required || title.pristine">
+            Title is required!
+          </div>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td class="form-label">Author:</td>
+        <td>
+          <input
+            class="input-field"
+            type="text" required
+            [(ngModel)]="book.author"
+            name="author"
+            #author="ngModel">
+        </td>
+        <td>
+          <div class="error-label" [hidden]="!author.errors?.required || author.pristine">
+            Author is required!
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="form-label">Isbn:</td>
+        <td>
+          <input
+            class="input-field"
+            type="text" required
+            [(ngModel)]="book.isbn"
+            name="isbn"
+            #isbn="ngModel">
+        </td>
+        <td>
+          <div class="error-label" [hidden]="!isbn.errors?.required || isbn.pristine">
+            Isbn is required!
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td>
+          <button type="submit" [disabled]="!form.valid">Save!</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+
+</div>

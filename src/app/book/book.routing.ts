@@ -1,8 +1,10 @@
+///<reference path="book-edit/book-edit.component.ts"/>
 import {Routes, RouterModule} from '@angular/router';
 import {BookComponent} from './book.component';
 import {BookListComponent} from './book-list/book-list.component';
 import {BookDetailsComponent} from './book-details/book-details.component';
 import {ConfirmCandeactivateGuardService} from './shared/confirm-candeactivate-guard.service';
+import {BookEditComponent} from "./book-edit/book-edit.component";
 
 // Define routes
 export const routes: Routes = [
@@ -15,6 +17,10 @@ export const routes: Routes = [
       component: BookDetailsComponent,
       path: ':isbn',
       canDeactivate: [ConfirmCandeactivateGuardService],
+    },
+    {
+      component: BookEditComponent,
+      path: ':isbn/edit',
     }
   ]},
 ];

@@ -1,0 +1,15 @@
+.input-field {
+  width: 200px;
+}
+
+.form-label{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.error-label {
+  font-size: 20px;
+  color: red;
+  font-weight: lighter;
+  font-style: italic;
+}
