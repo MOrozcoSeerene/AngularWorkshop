@@ -29,7 +29,6 @@ export class BookEditReactiveComponent implements OnInit {
   }
 
   onSubmit() {
-    debugger;
     this.service.createBook(this.form.value)
       .subscribe(() => alert('Book created'));
   }
